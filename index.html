@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #f9ca24;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        nav {
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            background-color: #000;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #f9ca24;
+            color: #000;
+        }
+        section {
+            display: none; /* Initially hide all sections */
+            padding: 50px 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #f9ca24;
+            text-align: center;
+            padding: 10px 0; /* Reduced padding */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Added CSS for tabs */
+        nav a {
+            border-bottom: 3px solid transparent;
+        }
+        nav a.active {
+            border-bottom: 3px solid #f9ca24;
+        }
+        /* Added spacing for hobbies section */
+        #hobbies {
+            padding-top: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        footer p {
+            margin: 0;
+        }
+        /* Responsive Design */
+        @media only screen and (min-width: 600px) {
+            /* Increase padding for sections on larger screens */
+            section {
+                padding: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+</header>
+
+<nav>
+    <a href="#" class="tab" data-target="about">About</a>
+    <a href="#" class="tab" data-target="hobbies">Hobbies</a>
+    <a href="#" class="tab" data-target="contact">Contact</a>
+</nav>
+
+<section id="welcome">
+    <h2>Welcome to My Portfolio!</h2>
+    <p>Explore more about me and my interests by clicking on the navigation tabs above.</p>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    
+    <img src="https://raw.githubusercontent.com/username/repository/branch/path/to/mali.jpg" alt="Muhammad Ali">
+    <p>My name is Muhammad Ali. I belong to Gwadar, Balochistan. I am currently a student pursuing a Bachelor of Science in Information Technology (BSIT) at the University of Gwadar. With a passion for technology, I am constantly exploring new advancements in the field of computer science and striving to enhance my skills in programming, software development, and system design.</p>
+    <p>During my academic journey, I have been involved in various projects that have provided me with hands-on experience and insights into real-world applications of technology. I enjoy collaborating with peers and mentors to solve complex problems and contribute to innovative solutions.</p>
+    <p>Aside from my academic pursuits, I have a keen interest in photography, gaming, and design. I find solace in capturing the beauty of the world through my lens, immersing myself in virtual adventures, and expressing my creativity through graphic and web design.</p>
+</section>
+
+<section id="hobbies">
+    <h2>Hobbies</h2>
+    <ul>
+        <li>Photography: Capturing moments and scenes with a camera is one of my passions. I enjoy exploring different angles and compositions to create captivating images.</li>
+        <li>Gaming: I love diving into virtual worlds and experiencing immersive gameplay. Whether it's action-packed adventures or strategic challenges, gaming is a great way for me to relax and unwind.</li>
+        <li>Coding: Turning ideas into reality through programming is both exciting and fulfilling for me. I enjoy the problem-solving aspect of coding and the endless possibilities it offers for creating innovative solutions.</li>
+        <li>Designing: From graphic design to web design, I have a keen interest in creating visually appealing and user-friendly designs. I enjoy experimenting with colors, layouts, and typography to convey messages effectively.</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: princemuhammadali12@gmail.com</p>
+    <p>Phone: +92 3063944021</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/muhammad-ali-94240a257" target="_blank">Muhammad Ali</a></p>
+</section>
+
+<footer>
+    <p>&copy; 2024 My Portfolio</p>
+</footer>
+
+<script>
+    // Get all tabs and sections
+    const tabs = document.querySelectorAll('.tab');
+    const sections = document.querySelectorAll('section');
+
+    // Show welcome section by default
+    document.getElementById('welcome').style.display = 'block';
+
+    // Add click event listener to each tab
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.getAttribute('data-target'); // Get the target section ID
+            // Hide all sections
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            // Show only the target section
+            document.getElementById(target).style.display = 'block';
+            // Mark the clicked tab as active
+            tabs.forEach(t => {
+                t.classList.remove('active');
+            });
+            tab.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
